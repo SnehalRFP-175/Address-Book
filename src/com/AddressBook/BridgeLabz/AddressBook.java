@@ -3,7 +3,7 @@ package com.AddressBook.BridgeLabz;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook 
+public class AddressBook extends Contacts
 {
 	
 	Scanner sc = new Scanner(System.in);
@@ -21,6 +21,7 @@ public class AddressBook
 		{
 			
 			Contacts contact = new Contacts(); //Local Object
+			System.out.println("Hash Code :" +contact.hashCode());
 			
 			contact.contactDetails();	
 			contactList.add(contact);
@@ -32,8 +33,11 @@ public class AddressBook
 	public void displayContacts()
 	{
 		for (int i = 0; i < contactList.size(); i++) {
+			
 			 Contacts contact = contactList.get(i);
+			 System.out.println("Hash Code :" +contact.hashCode());
 			 System.out.println(contact.toString());
+			 
 	        }
 	}
 	
@@ -55,9 +59,9 @@ public class AddressBook
 				  System.out.println(" 1. First Name \n 2. Last Name \n 3. Address \n 4. City \n 5. State \n 6. Zip Code \n 7. Mobile Number \n 8. Email Id \n 9. ALL \n 10. EXIT");
 				  System.out.println("What you want to edit :");
 				  
-				  int update =sc.nextInt(); 
+				  int ch = sc.nextInt(); 
 				
-				  switch(update)
+				  switch(ch)
 				  {
 				  case 1:
 					  System.out.println("\nEnter First Name :");
@@ -124,4 +128,32 @@ public class AddressBook
 		
 		
 	}
-}		
+	  
+	 //delete method to delete the contacts
+	  public void deleteContacts()
+		{
+			System.out.println("Enter Name to Update the Information :");
+			String firstName = sc.next();
+			boolean isAvailable = false;
+			
+			for (Contacts contact : contactList) {
+				 if(contact.getFirstName().equals(firstName))
+				  { 
+					 isAvailable = true;
+					 contactList.remove(contact);
+					 System.out.println("Deleted Sucessfully....!");
+					 break;
+				  }
+			}
+			
+			if( !isAvailable )
+			  { 
+				 System.out.println("Contact Not Available....!");
+			  }
+		}
+		
+
+				
+} 
+	
+

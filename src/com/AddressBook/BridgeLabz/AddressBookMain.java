@@ -3,8 +3,9 @@ package com.AddressBook.BridgeLabz;
 import java.util.Scanner;
 
 /*
- * UC 3- Updating the Contacts of Address Book
+ * UC4 -Deleting the Contacts of AddrressBook
  */
+
 public class AddressBookMain {
 	
 	public static void main(String a[])
@@ -15,7 +16,7 @@ public class AddressBookMain {
 		
 		while(true)
 		{
-			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. EXIT");
+			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. DELETE CONTACTS \n 5. EXIT");
 			System.out.println("Enter Your Choice :");
 			
 			int ch = sc.nextInt();
@@ -35,6 +36,10 @@ public class AddressBookMain {
 				break;
 				
 			case 4:
+				adressbook.deleteContacts();
+				break;
+				
+			case 5:
 				System.out.println("Exited...!");
 				return;
 				
