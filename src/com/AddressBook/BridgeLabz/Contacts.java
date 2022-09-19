@@ -71,6 +71,7 @@ public class Contacts {
 	public void setPhoneNumber(String phoneNumber)
 	{
 		this.phoneNumber = phoneNumber;
+		
 	}
 	public String getPhoneNumber()
 	{
@@ -87,11 +88,11 @@ public class Contacts {
 	}
 	
 	
+	//created contactsDetails Method 
 	public void contactDetails()
 	{
 		Scanner sc = new Scanner (System.in);
-		System.out.println("\nEnter First Name :");
-		setFirstName(sc.next());
+		
 		
 		System.out.println("Enter Last Name :");
 		setLastName(sc.next());
