@@ -1,7 +1,9 @@
 package com.AddressBook.BridgeLabz;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 /*
  * UC4 -Deleting the Contacts of AddrressBook
@@ -18,7 +20,7 @@ public class AddressBookMain {
 		
 		while(true)
 		{
-			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. DELETE CONTACTS \n 5.ADD ADDRESSBOOK \n 6.EXIT");
+			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. DELETE CONTACTS \n 5.ADD ADDRESSBOOK \n6.DISPLAY ADDRESSBOOK \n 7.EXIT");
 			System.out.println("Enter Your Choice :");
 			
 			int ch = sc.nextInt();
@@ -89,6 +91,18 @@ public class AddressBookMain {
 				break;
 				
 			case 6:
+				 Set<Map.Entry<String, AddressBook>> addressBook = addressBookHashMap.entrySet();
+                 if (addressBook.isEmpty()){
+                     System.out.println("No address books available!");
+                 }
+                 for (Map.Entry entry :  addressBook){
+                     System.out.println(entry.getKey());
+                     AddressBook addBook = (AddressBook) entry.getValue();
+                     addBook.displayContacts();
+                 }
+                 break;
+                 	
+			case 7:
 				System.out.println("Exited...!");
 				return;
 				

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.Serializable;
+import java.util.HashMap;
 
-public class AddressBook extends Contacts
+public class AddressBook 
 {
 	
 	Scanner sc = new Scanner(System.in);
@@ -153,7 +154,21 @@ public class AddressBook extends Contacts
 				 System.out.println("Contact Not Available....!");
 			  }
 		}
-				
+	  
+	  public List<Contacts> getContactList(){
+	        return contactList;
+	    }
+	  
+	  
+	  /*
+	   * Checking Duplicate Value
+	   */
+	  public boolean isDuplicate(String firstName, String lastName){
+	         boolean result = contactList.stream().filter(contact -> contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName)).count() > 0;
+	         return result;
+	     }
+	  
+	 
 } 
 	
 
