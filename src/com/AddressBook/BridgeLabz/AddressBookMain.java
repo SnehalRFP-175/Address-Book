@@ -20,7 +20,7 @@ public class AddressBookMain {
 		
 		while(true)
 		{
-			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. DELETE CONTACTS \n 5.ADD ADDRESSBOOK \n6.DISPLAY ADDRESSBOOK \n 7.EXIT");
+			System.out.println("\n 1. ADD CONTACTS \n 2. DISPLAY CONTACTS \n 3. UPDATE CONTACTS \n 4. DELETE CONTACTS \n 5.ADD ADDRESSBOOK \n6.DISPLAY ADDRESSBOOK \n 7. Search Persob \n 7.EXIT");
 			System.out.println("Enter Your Choice :");
 			
 			int ch = sc.nextInt();
@@ -101,8 +101,19 @@ public class AddressBookMain {
                      addBook.displayContacts();
                  }
                  break;
-                 	
+                 
 			case 7:
+				System.out.println("Enter The Address Book Name:");
+				String addressBookSearch = sc.next();
+                if (!addressBookHashMap.containsKey(addressBookSearch)){
+                    System.out.println("Address book not exists!");
+                }
+                else {
+                	adressbook.searchByCityOrState();
+                }
+				break;
+                 	
+			case 8:
 				System.out.println("Exited...!");
 				return;
 				
