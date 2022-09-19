@@ -15,6 +15,7 @@ public class Contacts {
 	private String email;
 	
 	
+	
 	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;
@@ -93,6 +94,8 @@ public class Contacts {
 	{
 		Scanner sc = new Scanner (System.in);
 		
+		System.out.println("Enter First Name :");
+		setFirstName(sc.next());
 		
 		System.out.println("Enter Last Name :");
 		setLastName(sc.next());
@@ -131,7 +134,7 @@ public class Contacts {
 				"\t  Email Id :" +email  +'}'
 				 		; 
 	}
-	public Object stream() {
+	public static Object stream() {
 		// TODO Auto-generated method stub
 		return null;
 	}
