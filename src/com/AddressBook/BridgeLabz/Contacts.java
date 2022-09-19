@@ -131,4 +131,8 @@ public class Contacts {
 				"\t  Email Id :" +email  +'}'
 				 		; 
 	}
+	public Object stream() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

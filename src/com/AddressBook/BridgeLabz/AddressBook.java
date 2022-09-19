@@ -1,7 +1,9 @@
 package com.AddressBook.BridgeLabz;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.io.Serializable;
 
 public class AddressBook extends Contacts
 {
@@ -151,8 +153,6 @@ public class AddressBook extends Contacts
 				 System.out.println("Contact Not Available....!");
 			  }
 		}
-		
-
 				
 } 
 	
