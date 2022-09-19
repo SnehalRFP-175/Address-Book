@@ -168,6 +168,20 @@ public class AddressBook
 	         return result;
 	     }
 	  
+	  /*
+	   * Search Person in City or State Across the Multiple
+	   */
+	  public void searchByCityOrState()
+	  {
+		  System.out.println("Enter the City or State:");
+		  String location =sc.next();
+		  contactList.stream().forEach(contact -> {
+	             if (contact.getCity().equals(location) || contact.getState().equals(location)){
+	                 System.out.println(contact);
+	             }
+	         });
+	     }
+	  
 	 
 } 
 	
